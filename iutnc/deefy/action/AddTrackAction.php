@@ -47,6 +47,7 @@ class AddTrackAction extends Action {
                     $_SESSION['playlist'] = serialize($playlistCourante);
 
                     $renderer = new AudioListeRenderer($playlistCourante);
+                    $html = "<div class='audio-list' div style='text-align: center; margin-top: 20px;'>";
                     $html .= "<p>Piste ajoutée avec succès à la playlist courante !</p>";
                     $html .= $renderer->render(Renderer::COMPACT);
                     $html .= "<p><a href='?action=add-track'>Ajouter une autre piste</a></p>";
@@ -69,25 +70,10 @@ class AddTrackAction extends Action {
             $html .= "<input type='file' id='inputfile' name='inputfile' accept='audio/mpeg' required><br><br>";
 
             $html .= "<label for='duree'>Durée : </label>";
-            $html .= "<input type='number' id='duree' name='duree' readonly required><br><br>";
+            $html .= "<input type='number' id='duree' name='duree' required><br><br>";
 
             $html .= "<button type='submit'>Ajouter la piste</button>";
             $html .= "</form>";
-
-            $html .= <<<HTML
-            <script>
-            document.getElementById('inputfile').addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (!file) return;
-                const audio = new Audio();
-                audio.src = URL.createObjectURL(file);
-                audio.addEventListener('loadedmetadata', function() {
-                    document.getElementById('duree').value = Math.round(audio.duration);
-                    URL.revokeObjectURL(audio.src);
-                });
-            });
-            </script>
-            HTML;
         }
 
         return $html;
