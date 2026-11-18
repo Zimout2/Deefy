@@ -15,4 +15,4 @@ Les fonctionnalités suivantes ont était réalisé :
 Lien du projet sur webetu : https://webetu.iutnc.univ-lorraine.fr/www/e79153u/Deefy/iutnc/?action=default
 
 Le code est issue du TD 13 avec des fonctionnalité supplémenaires pour correspondre au projet.
-L'IA à était utiliser pour comprendre comment bien faire le projet avec les différentes connexions en les fichiers php mais elle n'a pas était utilisé pour coder.
+L'IA à était utiliser pour comprendre comment bien faire le projet avec les différentes connexions en les fichiers php mais elle n'a pas était utilisée pour coder.
