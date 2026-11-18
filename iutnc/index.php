@@ -17,5 +17,5 @@ $app->addRoute('default', DefaultAction::class)
     ->addRoute('playlist', DisplaysPlaylistAction::class)
     ->addRoute('add-playlist', AddPlaylistAction::class)
     ->addRoute('add-track', AddTrackAction::class);
-DeefyRepository::setConfig(__DIR__ . '\deefy\config.ini');
+DeefyRepository::setConfig(__DIR__ . '/deefy/config.ini');
 $app->run();
